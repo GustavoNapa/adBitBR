@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carteira <img src="/assets/images/dolar.png" width="25px" style="float: right;"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Balanço: <span style="color: green;">{{ carteira.balanco }}</span> satoshis</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content style="font-size: 1.3em;">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="8">Nome: </ion-col>
+          <ion-col size="4">{{ carteira.nome}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">Membro tipo: </ion-col>
+          <ion-col size="4">{{ carteira.nivel}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">Cliques em anuncios: </ion-col>
+          <ion-col size="4">{{ carteira.qtde_cliques}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">Tempo de anuncios: </ion-col>
+          <ion-col size="4">{{ carteira.qtde_tempo}} s</ion-col>
+        </ion-row>
+        <hr><hr><hr>
+        <ion-row>
+          <ion-title>Afiliados</ion-title>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">Afiliados diretos: </ion-col>
+          <ion-col size="4">{{ carteira.qtde_afiliados}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">Afiliados indiretos: </ion-col>
+          <ion-col size="4">{{ carteira.qtde_afiliados_ind}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="8">Valor ganho com afiliados: </ion-col>
+          <ion-col size="4">{{ carteira.valor_afiliados}} satoshis</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

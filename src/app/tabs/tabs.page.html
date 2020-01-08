@@ -1,0 +1,25 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="inicio">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="ads">
+      <ion-icon name="browsers"></ion-icon>
+      <ion-label>Ads</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button id="tab_carteira" tab="carteira" *ngIf="visible_carteira">
+      <ion-icon name="wallet"></ion-icon>
+      <ion-label>Carteira</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button id="tab_perfil" tab="perfil" *ngIf="visible_perfil">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

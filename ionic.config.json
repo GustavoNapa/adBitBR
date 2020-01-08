@@ -1,0 +1,7 @@
+{
+  "name": "adBitBR",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
