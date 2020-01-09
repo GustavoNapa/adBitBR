@@ -11,64 +11,39 @@
     </ion-card-header>
   
     <ion-card-content>
-      <ion-grid fixed>
+      <ion-grid>
         <ion-row>
-          <ion-col size="6" style="padding: 0%;">
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>Surfar</ion-card-title>
-              </ion-card-header>
-            </ion-card >
-          </ion-col>
-          <ion-col size="6" style="padding: 0%;">
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>AutoAds</ion-card-title>
-              </ion-card-header>
-            </ion-card>
+          <ion-col size="12">
+            <ion-button expand="block" (click)="abrirAnuncio('Proprio')">
+              Anuncio Proprio
+            </ion-button>
           </ion-col>
         </ion-row>
+
         <ion-row>
-          <ion-col size="6" style="padding: 0%;">
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>Google Ads</ion-card-title>
-              </ion-card-header>
-            </ion-card>
-          </ion-col>
-          <ion-col size="6" style="padding: 0%;">
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>A-Ads</ion-card-title>
-              </ion-card-header>
-            </ion-card>
+          <ion-col size="12">
+            <ion-button expand="block" (click)="abrirAnuncio('Surfar')">
+              Surfar
+            </ion-button>
           </ion-col>
         </ion-row>
+        
         <ion-row>
-          <ion-col size="6" style="padding: 0%;">
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>BitMedia</ion-card-title>
-              </ion-card-header>
-            </ion-card>
+          <ion-col size="12">
+            <ion-button expand="block" (click)="abrirAnuncio('ADS')">
+              ADS
+            </ion-button>
           </ion-col>
-          <ion-col size="6" style="padding: 0%;">
-            <ion-card>
-              <ion-card-header>
-                <ion-card-title>CoinAds</ion-card-title>
-              </ion-card-header>
-            </ion-card>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <ion-button expand="block" (click)="abrirAnuncio('A-Ads')">
+              A-Ads
+            </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <!-- <iframe data-aa="1306093" src="//acceptable.a-ads.com/1306093" scrolling="no"
-        style="border:0px; padding:0; width: 100%; height: 100%; overflow:hidden" allowtransparency="true"></iframe> -->
-      <hr />
-      <!-- <iframe src="https://coinmedia.co/new_code_site125408.js?ic" scrolling="no" frameborder="0" width="200px"
-        height="200px"></iframe> -->
-      <hr />
-      <!-- <iframe src="http://coinmedia.co/new_code_site125409.js?ic" scrolling="no" frameborder="0" width="100%"
-        height="40px"></iframe> -->
     </ion-card-content>
   </ion-card>
 </ion-content>

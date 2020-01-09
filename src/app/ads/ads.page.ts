@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: "app-ads",
@@ -15,7 +16,11 @@ export class AdsPage implements OnInit {
       "Clique em anuncios para conseguir BitCoins, cada anuncio possui uma gratificação por sua visualização e você deve obedecer o tempo de permanencia pré estabelecido por cada um deles"
   };
 
-  constructor() {}
+  constructor(public navCtrl: NavController) {}
 
   ngOnInit() {}
+
+  public abrirAnuncio(anuncio) {
+    this.navCtrl.navigateForward("anuncio?anuncio="+anuncio);
+  }
 }
