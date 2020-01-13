@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'anuncio',
     loadChildren: () => import('./anuncio/anuncio.module').then( m => m.AnuncioPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({

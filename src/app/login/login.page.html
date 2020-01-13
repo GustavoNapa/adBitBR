@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fazer Login <img src="/assets/images/dolar.png" width="25px" style="float: right;">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="fazerLogin()">
+        <ion-item>
+          <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input required type="password"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button color="success" expand="block" color="primary" type="submit" [disabled]="submit_disable">
+          Login
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

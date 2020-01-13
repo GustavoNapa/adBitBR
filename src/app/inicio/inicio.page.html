@@ -6,9 +6,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-col>
-    <ion-button class="secondary" expand="block" (click)="login()">Login</ion-button>
+  <ion-col *ngIf="login.getLogin() == false">
+    <ion-card color="danger">
+      <ion-card-header>
+        <ion-card-title>Você esta deslogado</ion-card-title>
+        <ion-card-subtitle>Ao ficar deslogado, não podemos armazenar suas informações para recuperação, e suas ações ficam limitadas, por favor faça login para aproveitar ao máximo a experiência conosco.</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button color="success" expand="block" (click)="login.logar()">Fazer Login</ion-button>
+      </ion-card-content>
+    </ion-card>
   </ion-col>
+
   <ion-card>
     <ion-card-header>
       <ion-card-title>{{ card.titulo }}</ion-card-title>

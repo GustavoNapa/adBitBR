@@ -10,7 +10,8 @@ export class TabsPage {
   public visible_perfil = false;
   public visible_carteira = false;
 
-  constructor() {
+  constructor(
+  ) {
     
   }
 }
