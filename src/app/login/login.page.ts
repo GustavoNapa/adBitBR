@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: "app-login",
@@ -9,16 +10,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginPage implements OnInit {
   @Input() loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private FBAuth: AuthService) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      'login': ['', Validators.required],
-      'password': ['', Validators.required]
+      login: ["", Validators.required],
+      password: ["", Validators.required]
     });
   }
 
   public onSubmit() {
-    alert("submetido");
+    const user = this.FBAuth.login(this.loginForm.value.login, this.loginForm.value.password);
+    alert("logado: "+user);
   }
 }

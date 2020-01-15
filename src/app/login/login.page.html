@@ -16,13 +16,17 @@
           </ion-item>
           <ion-item>
             <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input required formControlName="password" type="text"></ion-input>
+            <ion-input required formControlName="password" type="password"></ion-input>
           </ion-item>
           <BR>
           <ion-button block color="primary" expand="block" type="submit" [disabled]="!loginForm.valid">
             Login
           </ion-button>
         </form>
+
+        <ion-button  routerDirection="forward" component="register" color="warning" expand="block">
+          Registrar-se
+        </ion-button>
       </div>
     </ion-card-content>
   </ion-card>
