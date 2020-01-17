@@ -24,8 +24,12 @@
           </ion-button>
         </form>
 
-        <ion-button  routerDirection="forward" component="register" color="warning" expand="block">
+        <ion-button  routerDirection="forward" component="register" color="warning" expand="block" (click)="onRegister()">
           Registrar-se
+        </ion-button>
+        
+        <ion-button routerDirection="forward" component="register" color="warning" expand="block" (click)="getLogin()">
+          Ver se ta logado
         </ion-button>
       </div>
     </ion-card-content>

@@ -12,6 +12,8 @@ export class TabsPage {
 
   constructor(
   ) {
-    
+    if (localStorage.getItem("userUid")) {
+      this.visible_perfil = true;
+    }
   }
 }

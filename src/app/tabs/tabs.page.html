@@ -11,12 +11,12 @@
       <ion-label>Ads</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button id="tab_carteira" tab="carteira">
+    <ion-tab-button id="tab_carteira" tab="carteira" *ngIf="visible_carteira">
       <ion-icon name="wallet"></ion-icon>
       <ion-label>Carteira</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button id="tab_perfil" tab="perfil">
+    <ion-tab-button id="tab_perfil" tab="perfil" *ngIf="visible_perfil">
       <ion-icon name="contact"></ion-icon>
       <ion-label>Perfil</ion-label>
     </ion-tab-button>
