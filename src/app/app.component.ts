@@ -10,7 +10,8 @@ import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
   selector: "app-root",
   templateUrl: "app.component.html",
   styleUrls: ["app.component.scss"],
-  providers: [ScreenOrientation]
+  providers: [ScreenOrientation
+  ]
 })
 export class AppComponent {
   constructor(

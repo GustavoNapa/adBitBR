@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
-import { ToastService } from '../toast/toast.service';
+import { LoadingController, ToastController, NavController } from '@ionic/angular';
 
 @Component({
   selector: "app-login",
@@ -14,7 +14,9 @@ export class LoginPage implements OnInit {
   constructor(
     private fb: FormBuilder,
     private FBAuth: AuthService,
-    public toastController: ToastService
+    public toastController: ToastController,
+    public loadingController: LoadingController,
+    public navCtrl: NavController
   ) {}
 
   ngOnInit() {
@@ -24,17 +26,39 @@ export class LoginPage implements OnInit {
     });
   }
 
-  public onSubmit() {
-    this.FBAuth.login(
-      this.loginForm.value.login,
-      this.loginForm.value.password
-    )
+  async onSubmit() {
+    this.presentLoading();
+    
+    if(await this.FBAuth.login(this.loginForm.value.login, this.loginForm.value.password)){
+      const toast = await this.toastController.create({
+        message: 'Logado com Sucesso',
+        duration: 2000
+      });
+      toast.present();
+
+      this.navCtrl.navigateForward("/tabs/inicio");
+    }else{
+
+    }
   }
 
-  public onRegister() {
-    this.FBAuth.register(
-      this.loginForm.value.login,
-      this.loginForm.value.password
-    );
+  public getUser(){
+    alert("UId: "+this.FBAuth.getLogin().uid);
+  }
+
+  public signOut(){
+    this.FBAuth.signOut();
+  }
+
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      message: 'Fazendo login',
+      duration: 5000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+
+    console.log('Loading dismissed!');
   }
 }

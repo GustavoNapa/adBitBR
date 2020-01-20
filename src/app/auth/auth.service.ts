@@ -1,39 +1,58 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { NavController } from '@ionic/angular';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
-  constructor(private AfAuth: AngularFireAuth, public navCtrl: NavController) {}
+  private userCollection = this.AfFire.collection("users");
 
-  public register(email, password) {
-    this.AfAuth.auth
+  constructor(private AfAuth: AngularFireAuth, private AfFire: AngularFirestore) {}
+
+  async register(email, name, password, telefone, carteira) {
+    let userID;
+    await this.AfAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(function(event) {
-        localStorage.setItem("userUid", event.user.uid);
-        alert("Registrado");
-        this.navCtrl.navigateForward("tabs/inicio");
+        userID = event.user.uid;
       })
       .catch(function(error) {
         alert("Error: " + error.code);
       });
+
+    await this.userCollection.doc(userID).set({
+      uid: userID,
+      name: name,
+      email: email,
+      telefone: telefone,
+      wallet: carteira
+        }).then(function (params) {
+          alert("Registrado");
+        }).catch(function (error) {
+          alert('Error: ' + error.code);
+    });
   }
 
-  login(email, password) {
-    this.AfAuth.auth
+  async login(email, password) {
+    let status = false;
+    await this.AfAuth.auth
       .signInWithEmailAndPassword(email, password)
-      .then(function(event) {
-        localStorage.setItem("userUid", event.user.uid);
-        this.navCtrl.navigateForward("tabs/inicio");
+      .then(function(user) {
+        status = true
       })
-      .catch(function(error) {
-        return error.code;
+      .catch(function (error) {
+        status = false;
       });
+    return status;
   }
 
   getLogin() {
     return this.AfAuth.auth.currentUser;
+  }
+
+  signOut(){
+    this.AfAuth.auth.signOut();
+    alert("Deslogado");
   }
 }

@@ -27,8 +27,5 @@ export class InicioPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (localStorage.getItem("userUid")) {
-      this.loged = true;
-    }
   }
 }

@@ -1,9 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title>Registrar-se <img src="/assets/images/dolar.png" width="25px" style="float: right;">
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-content>
+      <div *ngIf="registerForm">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label position="floating">Nome <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required formControlName="name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required formControlName="email" type="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Repita o Password <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required formControlName="password2" type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Telefone <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required formControlName="telefone" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Carteira <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required formControlName="carteira" type="text"></ion-input>
+          </ion-item>
+          
+          <ion-button block color="primary" type="submit" [disabled]="registerForm.invalid">
+            Registrar
+          </ion-button>
+        </form>
+      </div>
+      <ion-button block color="warning" href="/login">Voltar ao Login</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
