@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { AuthService } from '../auth/auth.service';
+import { BrMaskerModule, BrMaskDirective } from 'br-mask';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,8 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    public navCtrl: NavController
+    private FBAuth: AuthService,
+    public brMask: BrMaskDirective
   ) {}
 
   ngOnInit() {
