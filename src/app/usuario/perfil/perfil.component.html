@@ -1,0 +1,34 @@
+<ion-item>
+  <ion-title>{{perfil.nome}}</ion-title>
+  <ion-label></ion-label>
+  <ion-thumbnail slot="end">
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+  </ion-thumbnail>
+</ion-item>
+
+<ion-row *ngFor="let usuario of usuarios | async">
+  <!-- List of Input Items -->
+  <div *ngIf="usuario.uid == perfil.uid" style="font-size: 1.3em; font-weight: 600;">
+    <ion-row>
+      Email: {{usuario.email}}
+    </ion-row>
+    <ion-row>
+      Telefone: {{usuario.telefone}}
+    </ion-row>
+    <ion-row>
+      Email: {{usuario.carteira.satoshis}} <ion-badge slot="end">Trocar</ion-badge>
+    </ion-row>
+    <ion-row>
+      Saque automatico: <ion-checkbox slot="end" checked=""></ion-checkbox>
+    </ion-row>
+    <ion-row>
+      Valor para saque: <ion-input type="number" placeholder="Min 10000" slot="end"></ion-input>
+    </ion-row>
+    <ion-row>
+      Link de afiliados: {{perfil.linkAfiliado+usuario.uid}}<ion-badge>Copiar</ion-badge>
+    </ion-row>
+  </div>
+</ion-row>
+<ion-button routerDirection="forward" component="register" color="danger" expand="block" (click)="signOut()">
+  Fazer Logout
+</ion-button>

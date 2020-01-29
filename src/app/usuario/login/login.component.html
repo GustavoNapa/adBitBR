@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label position="floating">E-Mail <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input required formControlName="login" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input required formControlName="password" type="password"></ion-input>
+  </ion-item>
+  <BR>
+  <ion-button block color="primary" expand="block" type="submit" [disabled]="!loginForm.valid">
+    Login
+  </ion-button>
+</form>

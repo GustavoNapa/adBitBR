@@ -1,0 +1,12 @@
+<ion-row *ngFor="let carteira of carteiras | async">
+  <ion-row>
+    <ion-col>{{carteira.nome}}</ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>{{carteira.satoshis}}</ion-col>
+  </ion-row>
+  <!-- <div class="card-footer">
+    <button type="button" class="btn btn-default" (click)="edit(contato, contato.key)">Editar</button>
+    <button type="button" class="btn btn-danger ml-2" (click)="delete(contato.key)">Excluir</button>
+  </div> -->
+</ion-row>

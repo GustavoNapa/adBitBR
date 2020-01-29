@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>Nome</label>
+    <input type="text" class="form-control" [(ngModel)]="carteira.nome" name="nome" />
+  </div>
+
+  <div class="form-group">
+    <label>Numero de Cliques</label>
+    <input type="number" class="form-control" [(ngModel)]="carteira.numeroCliques" name="numeroCliques" />
+  </div>
+
+  <div class="form-group">
+    <label>Patente</label>
+    <input type="text" class="form-control" [(ngModel)]="carteira.patente" name="patente" />
+  </div>
+  
+  <div class="form-group">
+    <label>Satoshis</label>
+    <input type="number" class="form-control" [(ngModel)]="carteira.satoshis" name="satoshis" />
+  </div>
+
+  <div class="form-group">
+    <label>Tempo Em Anuncios</label>
+    <input type="number" class="form-control" [(ngModel)]="carteira.tempoEmAnuncios" name="tempoEmAnuncios" />
+  </div>  
+
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

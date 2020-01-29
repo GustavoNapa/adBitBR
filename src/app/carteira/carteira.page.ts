@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: "app-carteira",
@@ -17,7 +18,9 @@ export class CarteiraPage implements OnInit {
     valor_afiliados: 500
   };
 
-  constructor() {}
+  constructor(
+    private fireDataBase: AngularFireDatabase
+  ) {}
 
   ngOnInit() {}
 }

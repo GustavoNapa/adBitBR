@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth/auth.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +12,7 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private FBAuth: AuthService
+    public navCtrl: NavController
   ) {}
 
   ngOnInit() {
@@ -24,15 +24,5 @@ export class RegisterPage implements OnInit {
       telefone: ["", Validators.required],
       carteira: ["", Validators.required]
     });
-  }
-
-  public onSubmit(){
-    this.FBAuth.register(
-      this.registerForm.value.email,
-      this.registerForm.value.name,
-      this.registerForm.value.password,
-      this.registerForm.value.telefone,
-      this.registerForm.value.carteira
-    );
   }
 }

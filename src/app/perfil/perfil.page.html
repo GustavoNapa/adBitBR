@@ -5,39 +5,5 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-title>{{perfil.nome}}</ion-title>
-    <ion-label>{{perfil.nivel}}</ion-label>
-    <ion-thumbnail slot="end">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-thumbnail>
-  </ion-item>
-
-  <!-- List of Input Items -->
-  <ion-list>
-    <ion-item>
-      <ion-text>Email</ion-text>
-      <ion-input slot="end">exemple@exemp.le</ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-text>Telefone</ion-text>
-      <ion-input slot="end">(31) 99999-9999</ion-input>
-    </ion-item>
-    <ion-item detail>
-      <ion-text>18tdtD6aiPBH5oid42weGPpSzufzs3MdWL</ion-text>
-      <ion-badge>Trocar</ion-badge>
-    </ion-item>
-    <ion-item>
-      <ion-label>Saque automatico</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Valor para saque</ion-label>
-      <ion-input type="number" placeholder="Min 10000" slot="end"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Link de afiliados</ion-label>
-      <ion-text slot="end">https://bitly.com/64gf1245<ion-badge>Copiar</ion-badge></ion-text>
-    </ion-item>
-  </ion-list>
+  <app-perfil></app-perfil>
 </ion-content>

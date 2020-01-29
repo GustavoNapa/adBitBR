@@ -1,3 +1,5 @@
+import { EditarComponent } from './editar/editar.component';
+import { ListagemComponent } from './listagem/listagem.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +17,8 @@ import { CarteiraPage } from './carteira.page';
     IonicModule,
     CarteiraPageRoutingModule
   ],
-  declarations: [CarteiraPage]
+  declarations: [CarteiraPage,
+    ListagemComponent,
+    EditarComponent]
 })
 export class CarteiraPageModule {}

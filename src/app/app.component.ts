@@ -4,13 +4,16 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { Router } from '@angular/router';
+
 import { ScreenOrientation } from "@ionic-native/screen-orientation/ngx";
 
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
   styleUrls: ["app.component.scss"],
-  providers: [ScreenOrientation
+  providers: [
+    ScreenOrientation,
   ]
 })
 export class AppComponent {
@@ -18,18 +21,23 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private screenOrientation: ScreenOrientation
+    private screenOrientation: ScreenOrientation,
+    private router: Router
   ) {
     this.initializeApp();
   }
 
   initializeApp() {
+
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.screenOrientation.lock(
         this.screenOrientation.ORIENTATIONS.PORTRAIT
       );
+      if(!localStorage.getItem('uid')){
+        this.router.navigateByUrl('/login');
+      }
     });
   }
 }

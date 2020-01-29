@@ -1,3 +1,4 @@
+import { PerfilComponent } from './../usuario/perfil/perfil.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { PerfilPage } from './perfil.page';
     IonicModule,
     PerfilPageRoutingModule
   ],
-  declarations: [PerfilPage]
+  declarations: [PerfilPage, PerfilComponent]
 })
 export class PerfilPageModule {}

@@ -7,13 +7,6 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  public visible_perfil = false;
-  public visible_carteira = false;
-
   constructor(
-  ) {
-    if (localStorage.getItem("userUid")) {
-      this.visible_perfil = true;
-    }
-  }
+  ) {}
 }
